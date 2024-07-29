@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Sidebar.css'; 
+import '../Navbar/Navbar.css'; 
 
 const Sidebar = ({ isVisible, items, onRemoveItem, onClose }) => {
   const sidebarRef = useRef(null);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import Sidebar from '../Sidebar/Sidebar';
 import Logo from '../../assets/logo.jpg'
@@ -10,8 +10,10 @@ import item_4 from '../../assets/item-4.jpg'
 import item_5 from '../../assets/item-5.jpg'
 import item_6 from '../../assets/item-6.jpg'
 import item_7 from '../../assets/item-7.jpg'
+
 const Navbar = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [cartItems, setCartItems] = useState([
     { img: item_1, name: 'Item 1', price: 29.99 },
     { img: item_2, name: 'Item 2', price: 19.99 },
@@ -27,9 +29,14 @@ const Navbar = () => {
     { img: item_5, name: 'Item 5', price: 39.99 },
     { img: item_6, name: 'Item 6', price: 59.99 },
     { img: item_7, name: 'Item 7', price: 89.99 },
-
-
   ]);
+
+  useEffect(() => {
+    // Load the mode from localStorage if it exists
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setIsDarkMode(savedMode);
+    document.body.classList.toggle('dark-mode', savedMode);
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -41,6 +48,13 @@ const Navbar = () => {
 
   const removeItemFromCart = (index) => {
     setCartItems(cartItems.filter((_, i) => i !== index));
+  };
+
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode);
+    document.body.classList.toggle('dark-mode', newMode);
   };
 
   return (
@@ -55,14 +69,13 @@ const Navbar = () => {
             <span className="user-name">UserName</span>
           </div>
           <label className="ui-switch">
-            <input type="checkbox" />
+            <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
             <div className="slider">
               <div className="circle"></div>
             </div>
           </label>
 
           <div className="cart" onClick={toggleSidebar}>
-            {/* <span>Cart</span> */}
             <img src={Cart} alt="" />
           </div>
         </div>

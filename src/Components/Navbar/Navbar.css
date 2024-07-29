@@ -153,7 +153,35 @@
 .ui-switch input {
   display: none;
 }
+/*dark mode settings */ 
+body.dark-mode {
+  background-color: #1e1e2f; /* Dark blue background */
+  color: #e0e0e0; /* Light text color */
+}
 
+body.dark-mode .navbar {
+  background-color: #2a2a3e; /* Slightly lighter dark blue for the navbar */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .input {
+  background-color: #3a3a5b; /* Medium dark blue for input */
+  color: #e0e0e0; /* Light text color */
+  border: 1px solid #4a4a6b; /* Light blue border */
+}
+
+body.dark-mode .menu-item {
+  background-color: #2a2a3e; /* Matching dark blue background for menu items */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .menu-row {
+  background-color: #2a2a3e; /* Matching dark blue background for menu items */
+  color: #e0e0e0; /* Light text color */
+}
+body.dark-mode .user-name{
+  color: #ffffff;
+}
 .slider {
   -webkit-appearance: none;
   -moz-appearance: none;
