@@ -97,7 +97,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    border-bottom: 1px solid #dddddd; /* Light border for separation */
+    border-bottom: 1px solid #dddddd; 
   }
   
  
@@ -153,6 +153,7 @@
 .ui-switch input {
   display: none;
 }
+
 /*dark mode settings */ 
 body.dark-mode {
   background-color: #1e1e2f; /* Dark blue background */
@@ -278,7 +279,7 @@ body.dark-mode .user-name{
     max-width: 1400px;
     position: relative;
     padding: 10px 20px;
-    background-color: #e8e8e8; /* Light gray background for the menu */
+    background-color: #e8e8e8;
   }
   
   .menu-item {
