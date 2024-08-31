@@ -212,15 +212,16 @@ body.dark-mode .user-name{
 .items-display {
   padding: 20px;
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .item-card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
-  width: 200px;
+  width: 250px;
   text-align: center;
   padding: 10px;
   background-color: #fff;
@@ -238,6 +239,7 @@ body.dark-mode .user-name{
 
 .item-details h4 {
   margin: 10px 0;
+  color: black;
 }
 
 .item-details p {
@@ -245,7 +247,7 @@ body.dark-mode .user-name{
 }
 
 .item-details button {
-  background-color: #f00;
+  background-color: #293f54;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -255,5 +257,5 @@ body.dark-mode .user-name{
 }
 
 .item-details button:hover {
-  background-color: #c00;
+  background-color: #1f626d;
 }
